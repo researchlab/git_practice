@@ -4,6 +4,3 @@ git checkout主要有三个作用：
 第三个就是新建一个分支，git checkout <-b> <branchname>，不加-b的话只新建不切换到新的分支上，加-b新建并切换到该分支上
 
 git checkout -- file；撤销对工作区修改；这个命令是以最新的存储时间节点（add和commit）为参照，覆盖工作区对应文件file；这个命令改变的是工作区;
-
-
-test for checkout cmd.
