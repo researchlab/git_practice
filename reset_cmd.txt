@@ -1,0 +1,4 @@
+git reset主要是取消上一次的操作，具体用法有很多，说两个：
+第一个取消merge，git reset --hard ORIG_HEAD，这样会退回到merge前的代码。
+第二个就是取消commit，git eset HEAD~<num> <-soft/-hard>，取消上num次的commit
+第三个是将文件从stage（追踪的库）中移除，git reset HEAD <filename>
