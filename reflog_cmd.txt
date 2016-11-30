@@ -1,0 +1,1 @@
+用reflog cmd 查看提交的commit id 和注释说明
