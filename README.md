@@ -47,7 +47,22 @@ for learning git command.
 
 1. `$git fetch origin dev` 表示将`dev`分支的新代码下载到本地
 
-2. `$git merge origin dev` 表示合并`dev`的代码
+2. `$git merge origin/dev` 表示合并`dev`的代码
 
 
 > 如果merge前， 想要看看fetch的代码和本分支的代码存在哪些差异和修改， 可以用$git diff master origin/dev 来查看差异
+> 注意合并dev分支的命令是 $git merge origin/dev 而不是 $git merge origin dev.
+
+## dev分支master分支代码的步骤:
+
+假如现在`dev`分支上.
+
+1. `$git fetch origin master` 下载`master`分支上新的代码
+2. `$git diff dev origin/master`  查看下载的代码与本地`dev`的差异
+3. `$git merge origin/master` 确认无误后合并`master`分支代码
+
+
+## 注意事项
+
+
+1.  假如`master`为项目的最终主分支, 拉么其它子分支每次提交代码到自己分支分支时，均应该先执行`fetch`和`merge`最终主分支`master`代码，确认无冲突和错误时，才提交到本分支，这样便于最终主分支每次合并其它分支时都没有冲突和错误存在,减少沟通和修改时间(如果主分支合并者与子分支不是同一个人开发，辣么合并主分支产生冲突和错误时，就需要子分支的同事一起协同才能解决，而这在提交自己分支时先`fetch`和`merge`主分支后可以避免的）
