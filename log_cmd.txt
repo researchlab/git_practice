@@ -1,0 +1,7 @@
+log cmd 查看所有的commit id 和 注释， 
+example:
+git log 
+
+git log filename 查看 单个文件文件提交的所有commit id 和注释 
+example:
+$git log log_cmd.txt  查看log_cmd.txt文件提交的所有commit id 和 注释
