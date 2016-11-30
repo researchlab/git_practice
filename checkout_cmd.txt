@@ -1,0 +1,4 @@
+git checkout主要有三个作用：
+第一个就是切换分支。例如你从远程仓库clone下来所有的源代码，你git branch一下会看到你通常是在master，如果你想切换到某一个分支上呢？git checkout <branchname>
+第二个就是放弃对某个文件的修改。例如你想放弃对某个文件Hello.cpp的修改，git checkout -- <Hello.cpp>
+第三个就是新建一个分支，git checkout <-b> <branchname>，不加-b的话只新建不切换到新的分支上，加-b新建并切换到该分支上
