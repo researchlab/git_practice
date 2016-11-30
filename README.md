@@ -27,6 +27,10 @@ for learning git command.
 
 2. `$git push origin dev -vvv` 从上一步创建`dev`之后，直接通过`git push`命令就可以向远程库提交`dev`以创建远程`dev`分支
 
+也可以基于远程分支创建本地分支命令如下:
+
+1. `$git checkout -b dev origin/master` 本命令表示基于`origin/master`分支来创建`dev`分支
+
 
 ## master分支合并dev分支的代码步骤:
 
@@ -37,3 +41,13 @@ for learning git command.
 2. `$git pull origin dev`  在`master`分支上`pull`下来`dev`分支的代码
 
 3. `$git push origin master -vvv` 在确认`pull`下拉的`dev`分支的代码没有问题之后，通过`push`命令更新远程库`master`分支的代码
+
+
+但是不建议直接用`pull`来合并其它分支的代码， 而建议使用`fetch`（下载）和`merge`(合并）两个命令做合并操作;步骤:
+
+1. `$git fetch origin dev` 表示将`dev`分支的新代码下载到本地
+
+2. `$git merge origin dev` 表示合并`dev`的代码
+
+
+> 如果merge前， 想要看看fetch的代码和本分支的代码存在哪些差异和修改， 可以用$git diff master origin/dev 来查看差异
