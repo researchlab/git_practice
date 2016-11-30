@@ -2,3 +2,6 @@ git reset主要是取消上一次的操作，具体用法有很多，说两个�
 第一个取消merge，git reset --hard ORIG_HEAD，这样会退回到merge前的代码。
 第二个就是取消commit，git eset HEAD~<num> <-soft/-hard>，取消上num次的commit
 第三个是将文件从stage（追踪的库）中移除，git reset HEAD <filename>
+
+
+git reset HEAD -- file；清空add命令向暂存区提交的关于file文件的修改（Ustage）；这个命令仅改变暂存区，并不改变工作区，这意味着在无任何其他操作的情况下，工作区中的实际文件同该命令运行之前无任何变化
