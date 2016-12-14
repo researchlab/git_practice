@@ -1,0 +1,2 @@
+1.添加git tag -a v1.0 -m"stable version 1.0"
+
