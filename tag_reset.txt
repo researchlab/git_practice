@@ -1,4 +1,5 @@
 1.添加git tag -a v1.0 -m"stable version 1.0"
-2.删除tag标签
-git tag -d v1.0
+2.删除tag标签 git tag -d v1.0
+3.查看tag 标签  git tag  或者git show 
+4.推送到远程仓库 git push origin --tags
 
