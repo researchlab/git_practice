@@ -6,4 +6,8 @@
 	a. git push origin :v1.0
 	b. git push origin :refs/tags/[tagname]
 	c. git push origin –delete [tagname]
+6.快速回退版本
+1.git show v0.1 得到commit id(假如commit id 前六位:123456) 
+2.git reset --hard  123456
+3.通过上述步骤版本就回退到了v0.1tag的版本.
 
