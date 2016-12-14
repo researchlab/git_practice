@@ -68,61 +68,62 @@ for learning git command.
 
 ## 借助git tag 标签快速准确回退版本
 
-1. 打标签
+1.打标签
 发布文档版本之后一般建议打一个标签，方便标识和相关操作,
 ```bash 
-git tag -a v1.0 -m"v1.0 stable version"
+$git tag -a v1.0 -m"v1.0 stable version"
 ```
-2. 推送标签到远程仓库
+2.推送标签到远程仓库
 当本地打完标签觉得可以了之后，就应该及时推送到远程仓库，
 ```bash 
-git push origin --tags
+$git push origin --tags
 ```
 
-3. 查看有哪些标签
-	1. 查看有哪些标签名称
-	```bash
-	git tag
-	```
-	2. 具体查看某个标签的详细信息
-	```bash 
-	#git show <tag-name>
-	git show v1.0
-	```
+3.查看有哪些标签
+1. 查看有哪些标签名称
+```bash
+$git tag
+```
+2. 具体查看某个标签的详细信息
+```bash 
+#$git show <tag-name>
+$git show v1.0
+```
 
-4. 删除标签
-	1. 删除本地标签
-	```bash
-	# git tag -d <tag-name>
-	git tag -d v1.0
-	```
-	2. 删除远程仓库的标签
-	```bash 
-	$git push origin :v1.0					#方法一
-	$git push origin :refs/tags/[tagname]   #方法二
-	$git push origin –delete [tagname]      #方法三
-	```
-5. 借助标签快速向后回退版本
-   每次发布版本之前都应该对前一次稳定版本打上一个标签，当新发布版本存在bug时，则可以通过标签快速回退到标签指定的稳定版本,具体实施步骤,
-	1. 为当前bug版本新建一个分支
-	```bash
-	# $git checkout <tag-name> <new-branch-name>
-	$git checkout v0.1 bugfix 
-	# 或者 直接在bug版本目录下， git checkout -b bugfix 
-	```
-	2. 借助tag回退到稳定版本
-	```bash
-	$git show <stable-version-tag-name> #查询待回退稳定版本的commit-id(假如commit-id 前六位123456)
-	$git reset --hard <commit-id> #执行回退
-	$git push -u origin master #将回退版本推送到远程服务器
-	```
-	3. 合并已修复的bugfix分支
-	```bash
-	$git checkout master #回到主分支
-	$git merge bugfix #合并
-	```
+4.删除标签
+1. 删除本地标签
+```bash
+# git tag -d <tag-name>
+git tag -d v1.0
+```
+2. 删除远程仓库的标签
+```bash 
+$git push origin :v1.0					#方法一
+$git push origin :refs/tags/<tag-name>  #方法二
+$git push origin –delete <tag-name>     #方法三
+```
 
-6. 向前回退版本
+5.借助标签快速向后回退版本
+每次发布版本之前都应该对前一次稳定版本打上一个标签，当新发布版本存在bug时，则可以通过标签快速回退到标签指定的稳定版本,具体实施步骤,
+1. 为当前bug版本新建一个分支
+```bash
+# $git checkout <tag-name> <new-branch-name>
+$git checkout v0.1 bugfix 
+# 或者 直接在bug版本目录下， git checkout -b bugfix 
+```
+2. 借助tag回退到稳定版本
+```bash
+$git show <stable-version-tag-name> #查询待回退稳定版本的commit-id(假如commit-id 前六位123456)
+$git reset --hard <commit-id> #执行回退
+$git push -u origin master #将回退版本推送到远程服务器
+```
+3. 合并已修复的bugfix分支
+```bash
+$git checkout master #回到主分支
+$git merge bugfix #合并
+```
+
+6.向前回退版本
 当执行`$git reset --hard <commit-id>`命令向后回退之后，用`git log`是看不到之前提交的`log`了， 那如果要向前回退应该怎么办？ 可以借助`$git relog`命令来操作, 
 ```bash 
 $git relog #查询待向前回退版本的commit-id
