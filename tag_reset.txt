@@ -2,4 +2,8 @@
 2.删除tag标签 git tag -d v1.0
 3.查看tag 标签  git tag  或者git show 
 4.推送到远程仓库 git push origin --tags
+5.删除远程仓库tag, 主要有三种方法 
+	a. git push origin :v1.0
+	b. git push origin :refs/tags/[tagname]
+	c. git push origin –delete [tagname]
 
