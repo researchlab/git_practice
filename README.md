@@ -108,11 +108,13 @@ $git push origin –delete <tag-name>     #方法三
 ```
 
 5.借助标签快速向后回退版本
+
 每次发布版本之前都应该对前一次稳定版本打上一个标签，当新发布版本存在bug时，则可以通过标签快速回退到标签指定的稳定版本,具体实施步骤,
+
 5.1 为当前bug版本新建一个分支
 ```bash
 # $git checkout <tag-name> <new-branch-name>
-$git checkout v0.1 bugfix 
+$git checkout v1.0 bugfix 
 # 或者 直接在bug版本目录下， git checkout -b bugfix 
 ```
 
