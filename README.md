@@ -174,3 +174,5 @@ git config user.email.xxx@xxx.com
 	name =  xxxxxx
 	email = xxxxxxx 
 ```
+
+> 只有当 user.name 和 user.email 设置和github帐号完全相同，并且在上述设置完成之后git add 添加的提交 才会被github认为是github帐号者提交的，否在被认为是第三方提交.
