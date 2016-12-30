@@ -138,3 +138,39 @@ $git relog #查询待向前回退版本的commit-id
 $git reset --hard <commit-id> #执行回退
 ```
 
+
+## git config
+
+全局配置和项目配置
+
+全局配置信息在: `~/.gitconfig`
+
+项目配置在项目目录下的： `./.git/config`
+
+`git config --global`操作全局配置, 不带`--global`选项的话，会尝试相对于当前目录的：`./git/config`, 找不到的话，报错。
+
+为各个项目单独配置`user.name`和`user.email`
+
+你可能会在不同的几个项目中工作，各个项目的用户名可能不同，为了保证日志的准确性和提交时无误，最好对各个项目设置`user.name`和`user.email`
+
+```bash
+# for global setting
+git config --global user.name xxx
+git config --global user.email xxx@xxx.com
+
+# for repository
+git config user.name xxxx
+git config user.email xxxx@xxx.com
+```
+
+在本地`git clone`一个远程项目或`git init`一个新项目时， `git`提交默认使用的是全局的`user.name`和`user.email`信息， 可以在当前项目根目录下使用下面的命令构建属于当前项目提交着的名字和邮箱，如下:
+```bash 
+git config user.name xxx
+git config user.email.xxx@xxx.com
+```
+在当期项目根目录下执行上述两条命令之后，在`.git/config`文件中会新增如下信息， 当然如果直接手动在增加如下信息，而不使用上述命令，效果也是一样的.
+```bash
+[user]
+	name =  xxxxxx
+	email = xxxxxxx 
+```
