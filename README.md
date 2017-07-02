@@ -226,3 +226,5 @@ git rebase --continue
 如果你在之前的编辑框修改了n行，也就是说要对n次提交做修改，则需要重复执行以上步骤n次。
 需要注意的是，在执行rebase命令对指定提交修改或删除之后，该次提交之后的所有提交的"commit id"都会改变。
 
+## 其它
+- [git奇淫技巧](https://github.com/521xueweihan/git-tips)
