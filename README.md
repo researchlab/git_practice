@@ -1,4 +1,4 @@
-#git_demo 
+# tips from learning git command 
 
 for learning git command.
 
