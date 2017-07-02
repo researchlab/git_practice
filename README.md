@@ -53,7 +53,7 @@ for learning git command.
 > 如果merge前， 想要看看fetch的代码和本分支的代码存在哪些差异和修改， 可以用$git diff master origin/dev 来查看差异
 > 注意合并dev分支的命令是 $git merge origin/dev 而不是 $git merge origin dev.
 
-## dev分支master分支代码的步骤:
+## dev分支合并master分支代码的步骤:
 
 假如现在`dev`分支上.
 
