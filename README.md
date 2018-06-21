@@ -226,5 +226,25 @@ git rebase --continue
 如果你在之前的编辑框修改了n行，也就是说要对n次提交做修改，则需要重复执行以上步骤n次。
 需要注意的是，在执行rebase命令对指定提交修改或删除之后，该次提交之后的所有提交的"commit id"都会改变。
 
+### git pull之后查看别人修改的文件记录
+pull之后可以查看别人提交的日志记录或者文件差异
+```bash
+#查看文件差异有如下方式:
+#方式1
+git diff HEAD^ HEAD
+(如果提示zsh: no matches found: HEAD^) 可以尝试修改为,
+git diff HEAD\^ HEAD 
+
+#查看修改日志记录有如下方式:
+#方式1
+git show # view the diff of last commit
+#方式2
+git whatchanged
+#方式3
+git log --stat --date=relative
+#方式4
+git log -p path_to_file
+```
+
 ## 其它
 - [git奇淫技巧](https://github.com/521xueweihan/git-tips)
