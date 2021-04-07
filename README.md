@@ -230,10 +230,14 @@ git rebase --continue
 pull之后可以查看别人提交的日志记录或者文件差异
 ```bash
 #查看文件差异有如下方式:
-#方式1
+#方式1(查看所有差异)
 git diff HEAD^ HEAD
 (如果提示zsh: no matches found: HEAD^) 可以尝试修改为,
 git diff HEAD\^ HEAD 
+
+#方式2(查看某一个文件的差异)
+git diff HEAD^ file-path
+git diff HEAD^ src/path/utils.go   查看的是 utils.go 更新后与本地之前之间的差异对比
 
 #查看修改日志记录有如下方式:
 #方式1
