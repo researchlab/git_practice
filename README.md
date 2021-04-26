@@ -250,5 +250,21 @@ git log --stat --date=relative
 git log -p path_to_file
 ```
 
+## 删除远程仓库 但不删本地资源
+
+将生成的临时文件提交到了远程分支， 但是本地分支又要保留的情况下，如何只删除远程分支这些文件，步骤，
+1.将要删除的临时文件, 临时文件夹添加到.gitignore 并提交.gitignore到远程; 
+2.通过git rm -r --cached 待删除文件夹路径 删除这个文件夹缓存
+3.git commit -m""  comment 
+4.git push  提交
+
+```
+git rm -r --cached vagrant/k8s_3node_centos_calico/.vagrant/
+git commit -m"clean .vagrant"
+git push origin master -vvv
+```
+
+
 ## 其它
 - [git奇淫技巧](https://github.com/521xueweihan/git-tips)
+
