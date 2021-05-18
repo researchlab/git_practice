@@ -264,6 +264,10 @@ git commit -m"clean .vagrant"
 git push origin master -vvv
 ```
 
+## 删除分支
+
+1.删除本地分支  git branch -d ${branch_name}
+2.强制删除本地分支  git branch -D ${branch_name}
 
 ## 其它
 - [git奇淫技巧](https://github.com/521xueweihan/git-tips)
